@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.venv/
+
+# ML models
+*.pkl
+
+# Data
+Backend/models/amazon_reviews.csv
+Backend/data/uploaded_data/
+
+# Streamlit cache
+.streamlit/
+
+# OS
+.DS_Store

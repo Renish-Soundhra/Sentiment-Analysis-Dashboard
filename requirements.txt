@@ -1,0 +1,25 @@
+# Core
+python-dotenv==1.0.1
+
+# Data handling
+pandas==2.2.2
+numpy==1.26.4
+
+# NLP & ML
+scikit-learn==1.4.2
+joblib==1.4.2
+
+# Visualization
+matplotlib==3.9.0
+seaborn==0.13.2
+wordcloud==1.9.3
+
+# Frontend
+streamlit==1.36.0
+
+# Backend / APIs (if using FastAPI / Flask style routes)
+fastapi==0.111.0
+uvicorn==0.30.1
+
+# Optional (for Reddit / external sources later)
+requests==2.32.3

@@ -36,7 +36,6 @@ This project is designed to handle **noisy, informal, short-text data** commonly
 - Scikit-learn
 - Pandas, NumPy
 - TF-IDF Vectorizer
-- Pickle (local model loading)
 
 ### Frontend
 - Streamlit

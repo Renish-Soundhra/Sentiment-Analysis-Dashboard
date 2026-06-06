@@ -1,7 +1,7 @@
 # Backend/app.py
 
 from fastapi import FastAPI
-from .routes import analytics
+from Backend.routes import analytics
 
 app = FastAPI(title="Sentiment Analysis API")
 

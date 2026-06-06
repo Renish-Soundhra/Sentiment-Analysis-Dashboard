@@ -1,7 +1,7 @@
 # Backend/services/sentiment_service.py
 
 # Import the prediction functions from your new model_utils file
-from model_utils import predict_single, predict_bulk, load_artifacts
+from Backend.model_utils import predict_single, predict_bulk, load_artifacts
 from collections import Counter
 # You might also need other imports for your summary/trends functions
 import numpy as np

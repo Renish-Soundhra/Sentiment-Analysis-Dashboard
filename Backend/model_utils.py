@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List, Union
 import logging
 # Import the preprocess function from your separate file
-from .preprocess import preprocess
+from Backend.preprocess import preprocess
 import numpy as np
 
 # Setup logging

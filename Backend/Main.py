@@ -1,7 +1,7 @@
 # Main.py
 
 from fastapi import FastAPI
-from routes import analytics # Correct import statement
+from .routes import analytics # Correct import statement
 
 app = FastAPI()
 

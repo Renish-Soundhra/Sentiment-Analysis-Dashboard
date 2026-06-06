@@ -1,7 +1,7 @@
 # backend/routes/analytics.py
 
 from fastapi import APIRouter
-from services.sentiment_service import SentimentService
+from Backend.services.sentiment_service import SentimentService
 
 router = APIRouter()
 service = SentimentService()

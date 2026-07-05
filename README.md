@@ -106,6 +106,10 @@ User provides input via:
 
 File upload
 
+Uploaded files can use `reviewText`, `text`, `tweet`, `tweet_text`, `content`,
+`body`, `post`, `message`, or `comment` columns. Xquik CSV exports work through
+the same file-upload flow when one of those text columns is present.
+
 Video / Reels comment sections
 
 Reddit comment threads

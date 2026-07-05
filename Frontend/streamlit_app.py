@@ -9,6 +9,26 @@ from fetch_data import get_comments
 
 # The backend URL should not have the /api prefix, as it is added by the FastAPI app router.
 BACKEND_URL = os.getenv("SENTIMENT_API_URL", "http://localhost:8000")
+TEXT_COLUMN_ALIASES = [
+    "reviewText",
+    "text",
+    "tweet",
+    "tweet_text",
+    "content",
+    "body",
+    "post",
+    "message",
+    "comment",
+]
+
+
+def find_text_column(df):
+    columns_by_lower = {str(column).lower(): column for column in df.columns}
+    for alias in TEXT_COLUMN_ALIASES:
+        column = columns_by_lower.get(alias.lower())
+        if column is not None:
+            return column
+    return None
 
 st.set_page_config(page_title="Sentiment Analysis Dashboard", layout="wide")
 st.title("Sentiment Analysis Dashboard")
@@ -41,10 +61,13 @@ if analyze_btn:
                 else:
                     df = pd.read_excel(uploaded_file)
 
-                if 'reviewText' not in df.columns:
-                    st.error("File must contain a 'reviewText' column.")
+                text_column = find_text_column(df)
+                if text_column is None:
+                    aliases = ", ".join(TEXT_COLUMN_ALIASES)
+                    st.error(f"File must contain one text column: {aliases}.")
                     st.stop()
-                comments = df['reviewText'].dropna().tolist()
+                comments = df[text_column].dropna().astype(str).str.strip()
+                comments = [comment for comment in comments if comment]
         else:
             if not source:
                 st.warning(f"Please enter a {input_type} link.")
